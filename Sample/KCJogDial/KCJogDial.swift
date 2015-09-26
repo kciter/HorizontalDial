@@ -23,7 +23,7 @@ enum KCJogDialAnimateOptions {
     case EaseOutElastic
 }
 
-protocol KCJogDialDelegate: class {
+protocol KCJogDialDelegate {
     func jogDialWillBeginScroll(jogDial: KCJogDial)
     func jogDialDidEndScroll(jogDial: KCJogDial)
     func jogDialWillValueChanged(jogDial: KCJogDial)
@@ -84,7 +84,7 @@ class KCJogDial: UIControl {
     } // e.g.: top, middle, bottom
     
     var lock: Bool = false
-    var delegate: KCJogDialDelegate? = nil
+    var delegate: KCJogDialDelegate?
     
     var migneticOption: KCJogDialMagneticOptions = .Round
     var animateOption: KCJogDialAnimateOptions = .EaseOutBack
