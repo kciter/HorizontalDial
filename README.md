@@ -5,14 +5,14 @@
 [![Platform](https://img.shields.io/cocoapods/p/kcjogdial.svg?style=flat)](http://cocoapods.org/pods/kcjogdial)
 
 ## Preview
-![Preview gif](https://raw.github.com/kciter/KCJogDial/master/Screenshot/kcjogdial_preview.gif)
+<img src="https://github.com/kciter/KCJogDial/raw/master/Images/preview.gif" alt="Preview gif">
 
 ## Requirements
 * iOS 8.0+
 * Xcode 7.0
 
 ## Storyboard support
-![Storyboard Screenshot](https://raw.github.com/kciter/KCJogDial/master/Screenshot/storyboard.png)
+<img src="https://github.com/kciter/KCJogDial/raw/master/Images/storyboard.png" width="50%" alt="Storyboard Screenshot">
 
 ## Installation
 
