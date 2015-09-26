@@ -9,6 +9,7 @@
 
 ## Requirements
 * iOS 8.0+
+* Swift 2
 * Xcode 7.0
 
 ## Storyboard support
@@ -25,7 +26,7 @@ pod "KCJogDial"
 To install manually the KCJogDial in an app, just drag the `KCJogDial.swift` file into your project.
 
 ## Properties
-| Properties | Type | Description |
+| Property | Type | Description |
 |---|---|---|
 |`enableRange` | `Bool` | Use range mode |
 |`minimumValue` | `Double` | Acceptable minimum value |
@@ -43,6 +44,14 @@ To install manually the KCJogDial in an app, just drag the `KCJogDial.swift` fil
 |`padding` | `Double` | Vertical offfset from bottom in landscape mode |
 |`verticalAlign` | `String` | Vertical Align as `top`, `middle`, `bottom` |
 |`lock` | `Bool` | User input lock |
+
+## Protocols
+| Protocol | Description |
+|---|---|---|
+|`jogDialWillBeginScroll(jogDial: KCJogDial)` | This method is called whenever the KCJogDial will begin an animated scroll. |
+|`jogDialDidEndScroll(jogDial: KCJogDial)` | This method is called whenever the KCJogDial will ends an animated scroll. |
+|`jogDialWillValueChanged(jogDial: KCJogDial)` | This method is called whenever the KCJogDial will value changed. |
+|`jogDialDidValueChanged(jogDial: KCJogDial)` | This method is called whenever the KCJogDial did value changed. |
 
 ## License
 The MIT License (MIT)
