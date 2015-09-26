@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import QuartzCore
-import Darwin
 
 enum KCJogDialMagneticOptions {
     case Floor
