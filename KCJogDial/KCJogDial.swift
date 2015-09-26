@@ -8,14 +8,14 @@
 
 import UIKit
 
-enum KCJogDialMagneticOptions {
+public enum KCJogDialMagneticOptions {
     case Floor
     case Round
     case Ceil
     case None
 }
 
-enum KCJogDialAnimateOptions {
+public enum KCJogDialAnimateOptions {
     case EaseInQuad
     case EaseOutQuad
     case EaseOutBounce
@@ -23,7 +23,7 @@ enum KCJogDialAnimateOptions {
     case EaseOutElastic
 }
 
-protocol KCJogDialDelegate {
+public protocol KCJogDialDelegate {
     func jogDialWillBeginScroll(jogDial: KCJogDial)
     func jogDialDidEndScroll(jogDial: KCJogDial)
     func jogDialWillValueChanged(jogDial: KCJogDial)
@@ -37,7 +37,7 @@ extension KCJogDialDelegate {
 }
 
 @IBDesignable
-class KCJogDial: UIControl {
+public final class KCJogDial: UIControl {
     @IBInspectable var enableRange: Bool = false {
         didSet {
             if enableRange == true && value < minimumValue {
@@ -101,11 +101,11 @@ class KCJogDial: UIControl {
         super.init(frame: frame)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    override func drawRect(rect: CGRect) {
+    override public func drawRect(rect: CGRect) {
         super.drawRect(rect)
         
         guard let ctx = UIGraphicsGetCurrentContext() else { return }
@@ -159,7 +159,7 @@ class KCJogDial: UIControl {
         CGContextFillPath(ctx)
     }
     
-    override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
+    override public func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         guard tick != 0 && lock != true else { return false }
         
         stopAnimation()
@@ -173,7 +173,7 @@ class KCJogDial: UIControl {
         return true
     }
     
-    override func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
+    override public func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
         guard tick != 0 && lock != true else { return false }
         
         let location = touch.locationInView(self)
@@ -187,7 +187,7 @@ class KCJogDial: UIControl {
         return true
     }
     
-    override func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
+    override public func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
         guard tick != 0 && lock != true else { return }
         
         if enableRange == true && value < minimumValue {
