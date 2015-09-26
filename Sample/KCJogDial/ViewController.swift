@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, KCJogDialDelegate {
+class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var imageView: UIImageView?
     @IBOutlet var jogDial: KCJogDial?
     @IBOutlet var degreesValueLabel: UILabel?
@@ -16,10 +16,10 @@ class ViewController: UIViewController, UITextFieldDelegate, KCJogDialDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        jogDial?.delegate = self
+        jogDial!.delegate = self
     }
     
-    func jogDialDidValueChanged(jogDial: KCJogDial) {
+    override func jogDialDidValueChanged(jogDial: KCJogDial) {
         let degrees = jogDial.value
         let radians = degreesToRadians(degrees)
         degreesValueLabel?.text = "\(round(degrees*100)/100) Degrees"
@@ -31,13 +31,15 @@ class ViewController: UIViewController, UITextFieldDelegate, KCJogDialDelegate {
     }
     
     @IBAction func toMaximumValue() {
-        guard let maximumValue = jogDial?.maximumValue else { return }
-        jogDial?.animateWithValueUpdate(maximumValue, duration: 2)
+        if let maximumValue = jogDial?.maximumValue {
+            jogDial?.animateWithValueUpdate(maximumValue, duration: 2)
+        }
     }
     
     @IBAction func toMinimumValue() {
-        guard let minimumValue = jogDial?.minimumValue else { return }
-        jogDial?.animateWithValueUpdate(minimumValue, duration: 2)
+        if let minimumValue = jogDial?.minimumValue {
+            jogDial?.animateWithValueUpdate(minimumValue, duration: 2)
+        }
     }
     
     @IBAction func enableRangeValueChanged(_switch: UISwitch) {

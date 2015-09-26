@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A4D38F81BB6C3C7003A6B91 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A4D38F71BB6C3C7003A6B91 /* Launch Screen.xib */; };
+		9A4D39021BB6C8BD003A6B91 /* KCJogDialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4D39011BB6C8BD003A6B91 /* KCJogDialTests.swift */; };
 		B692BEC31BB5934400A8B098 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692BEC21BB5934400A8B098 /* AppDelegate.swift */; };
 		B692BEC51BB5934400A8B098 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692BEC41BB5934400A8B098 /* ViewController.swift */; };
 		B692BEC81BB5934400A8B098 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B692BEC61BB5934400A8B098 /* Main.storyboard */; };
 		B692BECA1BB5934400A8B098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B692BEC91BB5934400A8B098 /* Assets.xcassets */; };
-		B692BECD1BB5934400A8B098 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B692BECB1BB5934400A8B098 /* LaunchScreen.storyboard */; };
-		B692BED81BB5934400A8B098 /* KCJogDialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692BED71BB5934400A8B098 /* KCJogDialUITests.swift */; };
-		B692BEE31BB5935400A8B098 /* KCJogDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692BEE21BB5935400A8B098 /* KCJogDial.swift */; settings = {ASSET_TAGS = (); }; };
-		B692BEE51BB5965900A8B098 /* lena_std.tif in Resources */ = {isa = PBXBuildFile; fileRef = B692BEE41BB5965900A8B098 /* lena_std.tif */; settings = {ASSET_TAGS = (); }; };
+		B692BEE31BB5935400A8B098 /* KCJogDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692BEE21BB5935400A8B098 /* KCJogDial.swift */; };
+		B692BEE51BB5965900A8B098 /* lena_std.tif in Resources */ = {isa = PBXBuildFile; fileRef = B692BEE41BB5965900A8B098 /* lena_std.tif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B692BED41BB5934400A8B098 /* PBXContainerItemProxy */ = {
+		9A4D39031BB6C8BD003A6B91 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B692BEB71BB5934400A8B098 /* Project object */;
 			proxyType = 1;
@@ -28,29 +28,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A4D38F71BB6C3C7003A6B91 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		9A4D38FD1BB6C8BD003A6B91 /* KCJogDialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCJogDialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A4D39001BB6C8BD003A6B91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A4D39011BB6C8BD003A6B91 /* KCJogDialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCJogDialTests.swift; sourceTree = "<group>"; };
 		B692BEBF1BB5934400A8B098 /* KCJogDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCJogDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B692BEC21BB5934400A8B098 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B692BEC41BB5934400A8B098 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B692BEC71BB5934400A8B098 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B692BEC91BB5934400A8B098 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B692BECC1BB5934400A8B098 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B692BECE1BB5934400A8B098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B692BED31BB5934400A8B098 /* KCJogDialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KCJogDialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B692BED71BB5934400A8B098 /* KCJogDialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KCJogDialUITests.swift; sourceTree = "<group>"; };
-		B692BED91BB5934400A8B098 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B692BEE21BB5935400A8B098 /* KCJogDial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KCJogDial.swift; sourceTree = "<group>"; };
 		B692BEE41BB5965900A8B098 /* lena_std.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = lena_std.tif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B692BEBC1BB5934400A8B098 /* Frameworks */ = {
+		9A4D38FA1BB6C8BD003A6B91 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B692BED01BB5934400A8B098 /* Frameworks */ = {
+		B692BEBC1BB5934400A8B098 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,11 +60,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A4D38FE1BB6C8BD003A6B91 /* KCJogDialTests */ = {
+			isa = PBXGroup;
+			children = (
+				9A4D39011BB6C8BD003A6B91 /* KCJogDialTests.swift */,
+				9A4D38FF1BB6C8BD003A6B91 /* Supporting Files */,
+			);
+			path = KCJogDialTests;
+			sourceTree = "<group>";
+		};
+		9A4D38FF1BB6C8BD003A6B91 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A4D39001BB6C8BD003A6B91 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		B692BEB61BB5934400A8B098 = {
 			isa = PBXGroup;
 			children = (
 				B692BEC11BB5934400A8B098 /* KCJogDial */,
-				B692BED61BB5934400A8B098 /* KCJogDialUITests */,
+				9A4D38FE1BB6C8BD003A6B91 /* KCJogDialTests */,
 				B692BEC01BB5934400A8B098 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				B692BEBF1BB5934400A8B098 /* KCJogDial.app */,
-				B692BED31BB5934400A8B098 /* KCJogDialUITests.xctest */,
+				9A4D38FD1BB6C8BD003A6B91 /* KCJogDialTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,25 +103,34 @@
 				B692BEC41BB5934400A8B098 /* ViewController.swift */,
 				B692BEC61BB5934400A8B098 /* Main.storyboard */,
 				B692BEC91BB5934400A8B098 /* Assets.xcassets */,
-				B692BECB1BB5934400A8B098 /* LaunchScreen.storyboard */,
 				B692BECE1BB5934400A8B098 /* Info.plist */,
 				B692BEE21BB5935400A8B098 /* KCJogDial.swift */,
+				9A4D38F71BB6C3C7003A6B91 /* Launch Screen.xib */,
 			);
 			path = KCJogDial;
-			sourceTree = "<group>";
-		};
-		B692BED61BB5934400A8B098 /* KCJogDialUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B692BED71BB5934400A8B098 /* KCJogDialUITests.swift */,
-				B692BED91BB5934400A8B098 /* Info.plist */,
-			);
-			path = KCJogDialUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9A4D38FC1BB6C8BD003A6B91 /* KCJogDialTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A4D39071BB6C8BD003A6B91 /* Build configuration list for PBXNativeTarget "KCJogDialTests" */;
+			buildPhases = (
+				9A4D38F91BB6C8BD003A6B91 /* Sources */,
+				9A4D38FA1BB6C8BD003A6B91 /* Frameworks */,
+				9A4D38FB1BB6C8BD003A6B91 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A4D39041BB6C8BD003A6B91 /* PBXTargetDependency */,
+			);
+			name = KCJogDialTests;
+			productName = KCJogDialTests;
+			productReference = 9A4D38FD1BB6C8BD003A6B91 /* KCJogDialTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B692BEBE1BB5934400A8B098 /* KCJogDial */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B692BEDC1BB5934400A8B098 /* Build configuration list for PBXNativeTarget "KCJogDial" */;
@@ -122,24 +148,6 @@
 			productReference = B692BEBF1BB5934400A8B098 /* KCJogDial.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B692BED21BB5934400A8B098 /* KCJogDialUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B692BEDF1BB5934400A8B098 /* Build configuration list for PBXNativeTarget "KCJogDialUITests" */;
-			buildPhases = (
-				B692BECF1BB5934400A8B098 /* Sources */,
-				B692BED01BB5934400A8B098 /* Frameworks */,
-				B692BED11BB5934400A8B098 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B692BED51BB5934400A8B098 /* PBXTargetDependency */,
-			);
-			name = KCJogDialUITests;
-			productName = KCJogDialUITests;
-			productReference = B692BED31BB5934400A8B098 /* KCJogDialUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,12 +157,12 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = LeeSunhyoup;
 				TargetAttributes = {
+					9A4D38FC1BB6C8BD003A6B91 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = B692BEBE1BB5934400A8B098;
+					};
 					B692BEBE1BB5934400A8B098 = {
 						CreatedOnToolsVersion = 7.0;
-					};
-					B692BED21BB5934400A8B098 = {
-						CreatedOnToolsVersion = 7.0;
-						TestTargetID = B692BEBE1BB5934400A8B098;
 					};
 				};
 			};
@@ -172,33 +180,41 @@
 			projectRoot = "";
 			targets = (
 				B692BEBE1BB5934400A8B098 /* KCJogDial */,
-				B692BED21BB5934400A8B098 /* KCJogDialUITests */,
+				9A4D38FC1BB6C8BD003A6B91 /* KCJogDialTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9A4D38FB1BB6C8BD003A6B91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B692BEBD1BB5934400A8B098 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B692BECD1BB5934400A8B098 /* LaunchScreen.storyboard in Resources */,
 				B692BECA1BB5934400A8B098 /* Assets.xcassets in Resources */,
+				9A4D38F81BB6C3C7003A6B91 /* Launch Screen.xib in Resources */,
 				B692BEC81BB5934400A8B098 /* Main.storyboard in Resources */,
 				B692BEE51BB5965900A8B098 /* lena_std.tif in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B692BED11BB5934400A8B098 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9A4D38F91BB6C8BD003A6B91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A4D39021BB6C8BD003A6B91 /* KCJogDialTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B692BEBB1BB5934400A8B098 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,21 +225,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B692BECF1BB5934400A8B098 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B692BED81BB5934400A8B098 /* KCJogDialUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B692BED51BB5934400A8B098 /* PBXTargetDependency */ = {
+		9A4D39041BB6C8BD003A6B91 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B692BEBE1BB5934400A8B098 /* KCJogDial */;
-			targetProxy = B692BED41BB5934400A8B098 /* PBXContainerItemProxy */;
+			targetProxy = 9A4D39031BB6C8BD003A6B91 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -236,17 +244,47 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		B692BECB1BB5934400A8B098 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B692BECC1BB5934400A8B098 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9A4D39051BB6C8BD003A6B91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INFOPLIST_FILE = KCJogDialTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KCJogDial.app/KCJogDial";
+			};
+			name = Debug;
+		};
+		9A4D39061BB6C8BD003A6B91 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KCJogDialTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KCJogDial.app/KCJogDial";
+			};
+			name = Release;
+		};
 		B692BEDA1BB5934400A8B098 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -350,33 +388,17 @@
 			};
 			name = Release;
 		};
-		B692BEE01BB5934400A8B098 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = KCJogDialUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kciter.KCJogDialUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = KCJogDial;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		B692BEE11BB5934400A8B098 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = KCJogDialUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = kciter.KCJogDialUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = KCJogDial;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9A4D39071BB6C8BD003A6B91 /* Build configuration list for PBXNativeTarget "KCJogDialTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A4D39051BB6C8BD003A6B91 /* Debug */,
+				9A4D39061BB6C8BD003A6B91 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B692BEBA1BB5934400A8B098 /* Build configuration list for PBXProject "KCJogDial" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -391,15 +413,6 @@
 			buildConfigurations = (
 				B692BEDD1BB5934400A8B098 /* Debug */,
 				B692BEDE1BB5934400A8B098 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B692BEDF1BB5934400A8B098 /* Build configuration list for PBXNativeTarget "KCJogDialUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B692BEE01BB5934400A8B098 /* Debug */,
-				B692BEE11BB5934400A8B098 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

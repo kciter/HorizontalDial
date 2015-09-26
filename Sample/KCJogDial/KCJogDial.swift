@@ -30,7 +30,8 @@ protocol KCJogDialDelegate: class {
     func jogDialWillValueChanged(jogDial: KCJogDial)
     func jogDialDidValueChanged(jogDial: KCJogDial)
 }
-extension KCJogDialDelegate {
+
+extension UIViewController {
     func jogDialDidStartedScroll(jogDial: KCJogDial) {}
     func jogDialDidFinishedScroll(jogDial: KCJogDial) {}
     func jogDialShouldValueChanged(jogDial: KCJogDial) {}
@@ -86,7 +87,7 @@ class KCJogDial: UIControl {
     } // e.g.: top, middle, bottom
     
     var lock: Bool = false
-    var delegate: KCJogDialDelegate? = nil
+    var delegate: UIViewController? = nil
     
     var migneticOption: KCJogDialMagneticOptions = .Round
     var animateOption: KCJogDialAnimateOptions = .EaseOutBack
@@ -103,113 +104,121 @@ class KCJogDial: UIControl {
         super.init(frame: frame)
     }
     
-    required init?(coder: NSCoder) {
+    required init(coder: NSCoder) {
         super.init(coder: coder)
     }
     
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
         
-        guard let ctx = UIGraphicsGetCurrentContext() else { return }
-        for index in 0...markCount {
-            var relativePosition = (CGFloat((frame.width) / CGFloat(markCount)) * CGFloat(index) + CGFloat(slidePosition) - frame.width/2) % frame.width
-            if relativePosition < 0 {
-                relativePosition += frame.width
+        if let ctx = UIGraphicsGetCurrentContext() {
+            for index in 0...markCount {
+                var relativePosition = (CGFloat((frame.width) / CGFloat(markCount)) * CGFloat(index) + CGFloat(slidePosition) - frame.width/2) % frame.width
+                if relativePosition < 0 {
+                    relativePosition += frame.width
+                }
+                
+                let screenWidth = self.bounds.width / 2.0
+                let alpha = 1.0 - (abs(relativePosition-screenWidth) / screenWidth)
+                CGContextSetFillColorWithColor(ctx, self.markColor.colorWithAlphaComponent(alpha).CGColor)
+                
+                let x = relativePosition - markWidth/2
+                let width = markWidth
+                var y: CGFloat = 0
+                var height: CGFloat = 0
+                
+                if verticalAlign.rangeOfString("top") != nil {
+                    y = 0
+                    height = frame.height - CGFloat(padding*2)
+                } else if verticalAlign.rangeOfString("bottom") != nil {
+                    y += CGFloat(padding*2)
+                    height = frame.height - y
+                } else {
+                    y = CGFloat(padding)
+                    height = frame.height - CGFloat(padding*2)
+                }
+                let rect = CGRect(x: x, y: y, width: width, height: height)
+                
+                let path = UIBezierPath(roundedRect: rect, cornerRadius: markRadius)
+                CGContextAddPath(ctx, path.CGPath)
+                CGContextFillPath(ctx)
             }
             
-            let screenWidth = self.bounds.width / 2.0
-            let alpha = 1.0 - (abs(relativePosition-screenWidth) / screenWidth)
-            CGContextSetFillColorWithColor(ctx, self.markColor.colorWithAlphaComponent(alpha).CGColor)
-            
-            let x = relativePosition - markWidth/2
-            let width = markWidth
-            var y: CGFloat = 0
-            var height: CGFloat = 0
-            
-            if verticalAlign.containsString("top") {
-                y = 0
-                height = frame.height - CGFloat(padding*2)
-            } else if verticalAlign.containsString("bottom") {
-                y += CGFloat(padding*2)
-                height = frame.height - y
+            var centerMarkPositionY: CGFloat = 0
+            let centerMarkHeight: CGFloat = frame.height*centerMarkHeightRatio
+            if verticalAlign.rangeOfString("top") != nil {
+                centerMarkPositionY = 0
+            } else if verticalAlign.rangeOfString("bottom") != nil {
+                centerMarkPositionY = frame.height - centerMarkHeight
             } else {
-                y = CGFloat(padding)
-                height = frame.height - CGFloat(padding*2)
+                centerMarkPositionY = frame.height/2-centerMarkHeight/2
             }
-            let rect = CGRect(x: x, y: y, width: width, height: height)
+            let path = UIBezierPath(roundedRect:
+                CGRectMake(frame.width/2 - centerMarkWidth/2, centerMarkPositionY, centerMarkWidth, centerMarkHeight), cornerRadius: centerMarkRadius)
+            CGContextAddPath(ctx, path.CGPath)
             
-            let path = UIBezierPath(roundedRect: rect, cornerRadius: markRadius)
+            CGContextSetFillColorWithColor(ctx, centerMarkColor.CGColor)
             CGContextAddPath(ctx, path.CGPath)
             CGContextFillPath(ctx)
         }
-        
-        var centerMarkPositionY: CGFloat = 0
-        let centerMarkHeight: CGFloat = frame.height*centerMarkHeightRatio
-        if verticalAlign.containsString("top") {
-            centerMarkPositionY = 0
-        } else if verticalAlign.containsString("bottom") {
-            centerMarkPositionY = frame.height - centerMarkHeight
-        } else {
-            centerMarkPositionY = frame.height/2-centerMarkHeight/2
-        }
-        let path = UIBezierPath(roundedRect:
-            CGRectMake(frame.width/2 - centerMarkWidth/2, centerMarkPositionY, centerMarkWidth, centerMarkHeight), cornerRadius: centerMarkRadius)
-        CGContextAddPath(ctx, path.CGPath)
-        
-        CGContextSetFillColorWithColor(ctx, centerMarkColor.CGColor)
-        CGContextAddPath(ctx, path.CGPath)
-        CGContextFillPath(ctx)
     }
     
     override func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
-        guard tick != 0 && lock != true else { return false }
+        if tick != 0 && lock != true {
+            
+            stopAnimation()
+            
+            previousLocation = touch.locationInView(self)
+            
+            animated = false
+            
+            delegate?.jogDialDidStartedScroll(self)
+            
+            return true
+        }
         
-        stopAnimation()
-        
-        previousLocation = touch.locationInView(self)
-        
-        animated = false
-        
-        delegate?.jogDialDidStartedScroll(self)
-        
-        return true
+        return false
     }
     
     override func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
-        guard tick != 0 && lock != true else { return false }
+        if tick != 0 && lock != true {
+            
+            let location = touch.locationInView(self)
+            let deltaLocation = Double(location.x - previousLocation.x)
+            let deltaValue = deltaLocation / (Double(frame.width) / Double(markCount)) * tick
+            
+            previousLocation = location
+            
+            self.value -= deltaValue
+            
+            return true
+        }
         
-        let location = touch.locationInView(self)
-        let deltaLocation = Double(location.x - previousLocation.x)
-        let deltaValue = deltaLocation / (Double(frame.width) / Double(markCount)) * tick
-        
-        previousLocation = location
-        
-        self.value -= deltaValue
-        
-        return true
+        return false
     }
     
     override func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
-        guard tick != 0 && lock != true else { return }
-        
-        if enableRange == true && value < minimumValue {
-            animateWithValueUpdate(minimumValue)
-        } else if enableRange == true && value > maximumValue {
-            animateWithValueUpdate(maximumValue)
-        } else {
-            switch migneticOption {
-            case .Ceil:
-                animateWithValueUpdate(ceil(value * (10.0/tick) / 10.0) * (10.0 / (10.0/tick)))
-            case .Floor:
-                animateWithValueUpdate(floor(value * (10.0/tick) / 10.0) * (10.0 / (10.0/tick)))
-            case .Round:
-                animateWithValueUpdate(round(value * (10.0/tick) / 10.0) * (10.0 / (10.0/tick)))
-            case .None:
-                break
+        if tick != 0 && lock != true {
+            
+            if enableRange == true && value < minimumValue {
+                animateWithValueUpdate(minimumValue)
+            } else if enableRange == true && value > maximumValue {
+                animateWithValueUpdate(maximumValue)
+            } else {
+                switch migneticOption {
+                case .Ceil:
+                    animateWithValueUpdate(ceil(value * (10.0/tick) / 10.0) * (10.0 / (10.0/tick)))
+                case .Floor:
+                    animateWithValueUpdate(floor(value * (10.0/tick) / 10.0) * (10.0 / (10.0/tick)))
+                case .Round:
+                    animateWithValueUpdate(round(value * (10.0/tick) / 10.0) * (10.0 / (10.0/tick)))
+                case .None:
+                    break
+                }
             }
+            
+            delegate?.jogDialDidFinishedScroll(self)
         }
-        
-        delegate?.jogDialDidFinishedScroll(self)
     }
     
     func animateWithValueUpdate(nextValue: Double, duration: Double = 1.0) {
