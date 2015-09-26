@@ -24,16 +24,14 @@ enum KCJogDialAnimateOptions {
 }
 
 protocol KCJogDialDelegate: class {
-    func jogDialDidStartedScroll(jogDial: KCJogDial)
-    func jogDialDidFinishedScroll(jogDial: KCJogDial)
-    func jogDialShouldValueChanged(jogDial: KCJogDial)
+    func jogDialWillBeginScroll(jogDial: KCJogDial)
+    func jogDialDidEndScroll(jogDial: KCJogDial)
     func jogDialWillValueChanged(jogDial: KCJogDial)
     func jogDialDidValueChanged(jogDial: KCJogDial)
 }
 extension KCJogDialDelegate {
-    func jogDialDidStartedScroll(jogDial: KCJogDial) {}
-    func jogDialDidFinishedScroll(jogDial: KCJogDial) {}
-    func jogDialShouldValueChanged(jogDial: KCJogDial) {}
+    func jogDialWillBeginScroll(jogDial: KCJogDial) {}
+    func jogDialDidEndScroll(jogDial: KCJogDial) {}
     func jogDialWillValueChanged(jogDial: KCJogDial) {}
     func jogDialDidValueChanged(jogDial: KCJogDial) {}
 }
@@ -170,7 +168,7 @@ class KCJogDial: UIControl {
         
         animated = false
         
-        delegate?.jogDialDidStartedScroll(self)
+        delegate?.jogDialWillBeginScroll(self)
         
         return true
     }
@@ -209,7 +207,7 @@ class KCJogDial: UIControl {
             }
         }
         
-        delegate?.jogDialDidFinishedScroll(self)
+        delegate?.jogDialDidEndScroll(self)
     }
     
     func animateWithValueUpdate(nextValue: Double, duration: Double = 1.0) {
