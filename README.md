@@ -27,21 +27,22 @@ To install manually the KCJogDial in an app, just drag the `KCJogDial.swift` fil
 ## Properties
 | Properties | Type | Description |
 |---|---|---|
-| `enableRange` | `Bool` | Use range mode |
-| `minimumValue` | `Double` | Acceptable minimum value |
-| `maximumValue` | `Double` | Acceptable maximum value |
-| `value` | `Double` | Value |
-| `tick` | `Double` |  |
-| `centerMarkColor` | `UIColor` | Set center mark color |
-|` centerMarkWidth` | `CGFloat` | Set center mark width |
-|` centerMarkHeightRatio` | `CGFloat` | Set center mark height |
-|` centerMarkRadius` | `CGFloat` | Set center mark radius |
-|` markColor` | `UIColor` | Set mark color |
-|` markWidth` | `CGFloat` | Set mark width |
-|` markRadius` | `CGFloat` | Set mark radius |
-|` markCount` | `Int` | The number of mark in view |
-|` padding` | `Double` | Vertical offfset from bottom in landscape mode |
-|` verticalAlign` | `String` | Vertical Align as `top`, `middle`, `bottom` |
+|`enableRange` | `Bool` | Use range mode |
+|`minimumValue` | `Double` | Acceptable minimum value |
+|`maximumValue` | `Double` | Acceptable maximum value |
+|`value` | `Double` | Value |
+|`tick` | `Double` |  |
+|`centerMarkColor` | `UIColor` | Set center mark color |
+|`centerMarkWidth` | `CGFloat` | Set center mark width |
+|`centerMarkHeightRatio` | `CGFloat` | Set center mark height |
+|`centerMarkRadius` | `CGFloat` | Set center mark radius |
+|`markColor` | `UIColor` | Set mark color |
+|`markWidth` | `CGFloat` | Set mark width |
+|`markRadius` | `CGFloat` | Set mark radius |
+|`markCount` | `Int` | The number of mark in view |
+|`padding` | `Double` | Vertical offfset from bottom in landscape mode |
+|`verticalAlign` | `String` | Vertical Align as `top`, `middle`, `bottom` |
+|`lock` | `Bool` | User input lock |
 
 ## License
 The MIT License (MIT)
