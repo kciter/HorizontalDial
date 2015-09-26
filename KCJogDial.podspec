@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "KCJogDial"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "It is controllable UIView like Jog Dial"
   s.homepage     = "https://github.com/kciter/KCJogDial"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
