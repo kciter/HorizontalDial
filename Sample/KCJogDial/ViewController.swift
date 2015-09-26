@@ -16,7 +16,6 @@ class ViewController: UIViewController, UITextFieldDelegate, KCJogDialDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        jogDial?.delegate = self
     }
     
     func jogDialDidValueChanged(jogDial: KCJogDial) {

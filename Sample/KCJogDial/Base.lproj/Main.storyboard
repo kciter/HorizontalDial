@@ -6,7 +6,7 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--KCJogDial-->
+        <!--Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController title="KCJogDial" id="BYZ-38-t0r" customClass="ViewController" customModule="KCJogDial" customModuleProvider="target" sceneMemberID="viewController">
@@ -93,6 +93,9 @@
                                         <real key="value" value="14"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ywz-6m-Lbf"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbT-1h-Uh0">
                                 <rect key="frame" x="0.0" y="435" width="375" height="232"/>

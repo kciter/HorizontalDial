@@ -23,22 +23,16 @@ public enum KCJogDialAnimateOptions {
     case EaseOutElastic
 }
 
-public protocol KCJogDialDelegate {
-    func jogDialWillBeginScroll(jogDial: KCJogDial)
-    func jogDialDidEndScroll(jogDial: KCJogDial)
-    func jogDialWillValueChanged(jogDial: KCJogDial)
-    func jogDialDidValueChanged(jogDial: KCJogDial)
-}
-extension KCJogDialDelegate {
-    func jogDialWillBeginScroll(jogDial: KCJogDial) {}
-    func jogDialDidEndScroll(jogDial: KCJogDial) {}
-    func jogDialWillValueChanged(jogDial: KCJogDial) {}
-    func jogDialDidValueChanged(jogDial: KCJogDial) {}
+@objc public protocol KCJogDialDelegate {
+    optional func jogDialWillBeginScroll(jogDial: KCJogDial)
+    optional func jogDialDidEndScroll(jogDial: KCJogDial)
+    optional func jogDialWillValueChanged(jogDial: KCJogDial)
+    optional func jogDialDidValueChanged(jogDial: KCJogDial)
 }
 
 @IBDesignable
 public final class KCJogDial: UIControl {
-    @IBInspectable var enableRange: Bool = false {
+    @IBInspectable public var enableRange: Bool = false {
         didSet {
             if enableRange == true && value < minimumValue {
                 animateWithValueUpdate(minimumValue)
@@ -47,47 +41,47 @@ public final class KCJogDial: UIControl {
             }
         }
     }
-    @IBInspectable var minimumValue: Double = -100
-    @IBInspectable var maximumValue: Double = 100
-    @IBInspectable var value: Double = 0.0 {
+    @IBInspectable public var minimumValue: Double = -100
+    @IBInspectable public var maximumValue: Double = 100
+    @IBInspectable public var value: Double = 0.0 {
         didSet {
             slidePosition = -value * (Double(frame.width) / Double(markCount)) / tick + Double(frame.width/2)
             setNeedsDisplay()
-            delegate?.jogDialDidValueChanged(self)
+            delegate?.jogDialDidValueChanged?(self)
         }
     }
-    @IBInspectable var tick: Double = 1.0 {
+    @IBInspectable public var tick: Double = 1.0 {
         didSet {
             setNeedsDisplay()
         }
     }
     
-    @IBInspectable var centerMarkColor: UIColor = UIColor.yellowColor()
-    @IBInspectable var centerMarkWidth: CGFloat = 3.0
-    @IBInspectable var centerMarkHeightRatio: CGFloat = 0.5
-    @IBInspectable var centerMarkRadius: CGFloat = 5.0
+    @IBInspectable public var centerMarkColor: UIColor = UIColor.yellowColor()
+    @IBInspectable public var centerMarkWidth: CGFloat = 3.0
+    @IBInspectable public var centerMarkHeightRatio: CGFloat = 0.5
+    @IBInspectable public var centerMarkRadius: CGFloat = 5.0
     
-    @IBInspectable var markColor: UIColor = UIColor.whiteColor()
-    @IBInspectable var markWidth: CGFloat = 1.0
-    @IBInspectable var markRadius: CGFloat = 1.0
-    @IBInspectable var markCount: Int = 20
+    @IBInspectable public var markColor: UIColor = UIColor.whiteColor()
+    @IBInspectable public var markWidth: CGFloat = 1.0
+    @IBInspectable public var markRadius: CGFloat = 1.0
+    @IBInspectable public var markCount: Int = 20
     
-    @IBInspectable var padding: Double = 10 {
+    @IBInspectable public var padding: Double = 10 {
         didSet {
             setNeedsDisplay()
         }
     }
-    @IBInspectable var verticalAlign: String = "middle" {
+    @IBInspectable public var verticalAlign: String = "middle" {
         didSet {
             setNeedsDisplay()
         }
     } // e.g.: top, middle, bottom
     
-    var lock: Bool = false
-    var delegate: KCJogDialDelegate?
+    public var lock: Bool = false
+    @IBOutlet public weak var delegate: AnyObject?
     
-    var migneticOption: KCJogDialMagneticOptions = .Round
-    var animateOption: KCJogDialAnimateOptions = .EaseOutBack
+    public var migneticOption: KCJogDialMagneticOptions = .Round
+    public var animateOption: KCJogDialAnimateOptions = .EaseOutBack
     private(set) var animated: Bool = false
     
     private var previousValue: Double = 0.0
@@ -168,7 +162,7 @@ public final class KCJogDial: UIControl {
         
         animated = false
         
-        delegate?.jogDialWillBeginScroll(self)
+        delegate?.jogDialWillBeginScroll?(self)
         
         return true
     }
@@ -207,10 +201,10 @@ public final class KCJogDial: UIControl {
             }
         }
         
-        delegate?.jogDialDidEndScroll(self)
+        delegate?.jogDialDidEndScroll?(self)
     }
     
-    func animateWithValueUpdate(nextValue: Double, duration: Double = 1.0) {
+    public func animateWithValueUpdate(nextValue: Double, duration: Double = 1.0) {
         previousValue = value
         self.nextValue = nextValue
         if nextValue == previousValue { return }
@@ -241,7 +235,7 @@ public final class KCJogDial: UIControl {
             value = easeOutElastic(time: time, startValue: previousValue, endValue: nextValue, duration: 1.0)
         }
         
-        delegate?.jogDialDidValueChanged(self)
+        delegate?.jogDialDidValueChanged?(self)
         
         if time >= 1.0 {
             stopAnimation()
