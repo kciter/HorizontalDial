@@ -32,7 +32,7 @@ To install manually the KCJogDial in an app, just drag the `KCJogDial.swift` fil
 |`minimumValue` | `Double` | Acceptable minimum value |
 |`maximumValue` | `Double` | Acceptable maximum value |
 |`value` | `Double` | Value |
-|`tick` | `Double` |  |
+|`tick` | `Double` | Increase value |
 |`centerMarkColor` | `UIColor` | Set center mark color |
 |`centerMarkWidth` | `CGFloat` | Set center mark width |
 |`centerMarkHeightRatio` | `CGFloat` | Set center mark height |
