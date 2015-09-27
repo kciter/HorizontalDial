@@ -1,5 +1,5 @@
 # KCJogDial
-![Swift 2.0](https://img.shields.io/badge/Swift-2.0-orange.svg)
+![Swift 2.0](https://img.shields.io/badge/Swift-1.2-orange.svg)
 [![Version](https://img.shields.io/cocoapods/v/KCJogDial.svg?style=flat)](http://cocoapods.org/pods/KCJogDial)
 [![License](https://img.shields.io/cocoapods/l/KCJogDial.svg?style=flat)](http://cocoapods.org/pods/KCJogDial)
 [![Platform](https://img.shields.io/cocoapods/p/KCJogDial.svg?style=flat)](http://cocoapods.org/pods/KCJogDial)
