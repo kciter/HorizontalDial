@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, KCJogDialDelegate {
     @IBOutlet var imageView: UIImageView?
     @IBOutlet var jogDial: KCJogDial?
     @IBOutlet var degreesValueLabel: UILabel?
@@ -19,7 +19,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         jogDial!.delegate = self
     }
     
-    override func jogDialDidValueChanged(jogDial: KCJogDial) {
+    func jogDialDidValueChanged(jogDial: KCJogDial) {
         let degrees = jogDial.value
         let radians = degreesToRadians(degrees)
         degreesValueLabel?.text = "\(round(degrees*100)/100) Degrees"
