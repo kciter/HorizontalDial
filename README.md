@@ -8,20 +8,22 @@
 <img src="https://github.com/kciter/KCJogDial/raw/master/Images/preview.gif" alt="Preview gif">
 
 ## Requirements
-* iOS 8.0+
-* Xcode 7.0
+* iOS 7.0+
+* Xcode 6.0+
 
 ## Storyboard support
 <img src="https://github.com/kciter/KCJogDial/raw/master/Images/storyboard.png" width="50%" alt="Storyboard Screenshot">
 
 ## Installation
 
-### Cocoapods
+### iOS 8+
+#### Cocoapods
 ```ruby
 use_frameworks!
-pod "KCJogDial"
+pod "KCJogDial", :git => 'https://github.com/kciter/KCJogDial.git', :branch => 'swift1.2'
 ```
-### Manually
+### iOS 7
+#### Manually
 To install manually the KCJogDial in an app, just drag the `KCJogDial.swift` file into your project.
 
 ## Properties
