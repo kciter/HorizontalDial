@@ -53,6 +53,12 @@ To install manually the KCJogDial in an app, just drag the `KCJogDial.swift` fil
 |`jogDialWillValueChanged(jogDial: KCJogDial)` | This method is called whenever the KCJogDial will value changed. |
 |`jogDialDidValueChanged(jogDial: KCJogDial)` | This method is called whenever the KCJogDial did value changed. |
 
+## TODO
+* Code refactoring
+* Optimizing UI performance
+* Add `clipsToRange` property
+* Add `unit` property
+
 ## License
 The MIT License (MIT)
 
