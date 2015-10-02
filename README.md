@@ -41,7 +41,7 @@ To install manually the KCJogDial in an app, just drag the `KCJogDial.swift` fil
 |`markWidth` | `CGFloat` | Set mark width |
 |`markRadius` | `CGFloat` | Set mark radius |
 |`markCount` | `Int` | The number of mark in view |
-|`padding` | `Double` | Vertical offfset from bottom in landscape mode |
+|`padding` | `Double` | Vertical offset from bottom in landscape mode |
 |`verticalAlign` | `String` | Vertical Align as `top`, `middle`, `bottom` |
 |`lock` | `Bool` | User input lock |
 
