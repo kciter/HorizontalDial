@@ -32,7 +32,7 @@ To install manually the KCJogDial in an app, just drag the `KCJogDial.swift` fil
 |`minimumValue` | `Double` | Acceptable minimum value |
 |`maximumValue` | `Double` | Acceptable maximum value |
 |`value` | `Double` | Value |
-|`tick` | `Double` |  |
+|`tick` | `Double` | Increase value |
 |`centerMarkColor` | `UIColor` | Set center mark color |
 |`centerMarkWidth` | `CGFloat` | Set center mark width |
 |`centerMarkHeightRatio` | `CGFloat` | Set center mark height |
@@ -41,7 +41,7 @@ To install manually the KCJogDial in an app, just drag the `KCJogDial.swift` fil
 |`markWidth` | `CGFloat` | Set mark width |
 |`markRadius` | `CGFloat` | Set mark radius |
 |`markCount` | `Int` | The number of mark in view |
-|`padding` | `Double` | Vertical offfset from bottom in landscape mode |
+|`padding` | `Double` | Vertical offset from bottom in landscape mode |
 |`verticalAlign` | `String` | Vertical Align as `top`, `middle`, `bottom` |
 |`lock` | `Bool` | User input lock |
 
@@ -52,6 +52,12 @@ To install manually the KCJogDial in an app, just drag the `KCJogDial.swift` fil
 |`jogDialDidEndScroll(jogDial: KCJogDial)` | This method is called whenever the KCJogDial will ends an animated scroll. |
 |`jogDialWillValueChanged(jogDial: KCJogDial)` | This method is called whenever the KCJogDial will value changed. |
 |`jogDialDidValueChanged(jogDial: KCJogDial)` | This method is called whenever the KCJogDial did value changed. |
+
+## TODO
+* Code refactoring
+* Optimizing UI performance
+* Add `clipsToRange` property
+* Add `unit` property
 
 ## License
 The MIT License (MIT)
