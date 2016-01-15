@@ -3,7 +3,6 @@
 [![Version](https://img.shields.io/cocoapods/v/KCHorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
 [![License](https://img.shields.io/cocoapods/l/KCHorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
 [![Platform](https://img.shields.io/cocoapods/p/KCHorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
-[![Build Status](https://travis-ci.org/kciter/KCHorizontalDial.svg)](https://travis-ci.org/kciter/KCHorizontalDial)
 
 ## Preview
 <img src="https://github.com/kciter/KCHorizontalDial/raw/master/Images/preview.gif" alt="Preview gif">
