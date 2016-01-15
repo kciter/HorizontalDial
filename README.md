@@ -1,12 +1,12 @@
-# KCJogDial
+# KCHorizontalDial
 ![Swift 2.0](https://img.shields.io/badge/Swift-2.0-orange.svg)
-[![Version](https://img.shields.io/cocoapods/v/KCJogDial.svg?style=flat)](http://cocoapods.org/pods/kcjogdial)
-[![License](https://img.shields.io/cocoapods/l/KCJogDial.svg?style=flat)](http://cocoapods.org/pods/kcjogdial)
-[![Platform](https://img.shields.io/cocoapods/p/KCJogDial.svg?style=flat)](http://cocoapods.org/pods/kcjogdial)
-[![Build Status](https://travis-ci.org/kciter/KCJogDial.svg)](https://travis-ci.org/kciter/KCJogDial)
+[![Version](https://img.shields.io/cocoapods/v/KCHorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
+[![License](https://img.shields.io/cocoapods/l/KCHorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
+[![Platform](https://img.shields.io/cocoapods/p/KCHorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
+[![Build Status](https://travis-ci.org/kciter/KCHorizontalDial.svg)](https://travis-ci.org/kciter/KCHorizontalDial)
 
 ## Preview
-<img src="https://github.com/kciter/KCJogDial/raw/master/Images/preview.gif" alt="Preview gif">
+<img src="https://github.com/kciter/KCHorizontalDial/raw/master/Images/preview.gif" alt="Preview gif">
 
 ## Requirements
 * iOS 8.0+
@@ -14,17 +14,17 @@
 * Xcode 7.0
 
 ## Storyboard support
-<img src="https://github.com/kciter/KCJogDial/raw/master/Images/storyboard.png" width="50%" alt="Storyboard Screenshot">
+<img src="https://github.com/kciter/KCHorizontalDial/raw/master/Images/storyboard.png" width="50%" alt="Storyboard Screenshot">
 
 ## Installation
 
 ### Cocoapods
 ```ruby
 use_frameworks!
-pod "KCJogDial"
+pod "KCHorizontalDial"
 ```
 ### Manually
-To install manually the KCJogDial in an app, just drag the `KCJogDial.swift` file into your project.
+To install manually the KCHorizontalDial in an app, just drag the `KCHorizontalDial.swift` file into your project.
 
 ## Properties
 | Property | Type | Description |
@@ -49,10 +49,10 @@ To install manually the KCJogDial in an app, just drag the `KCJogDial.swift` fil
 ## Protocols
 | Protocol | Description |
 |---|---|---|
-|`jogDialWillBeginScroll(jogDial: KCJogDial)` | This method is called whenever the KCJogDial will begin an animated scroll. |
-|`jogDialDidEndScroll(jogDial: KCJogDial)` | This method is called whenever the KCJogDial will ends an animated scroll. |
-|`jogDialWillValueChanged(jogDial: KCJogDial)` | This method is called whenever the KCJogDial will value changed. |
-|`jogDialDidValueChanged(jogDial: KCJogDial)` | This method is called whenever the KCJogDial did value changed. |
+|`horizontalDialWillBeginScroll(horizontalDial: KCHorizontalDial)` | This method is called whenever the KCHorizontalDial will begin an animated scroll. |
+|`horizontalDialDidEndScroll(horizontalDial: KCHorizontalDial)` | This method is called whenever the KCHorizontalDial will ends an animated scroll. |
+|`horizontalDialWillValueChanged(horizontalDial: KCHorizontalDial)` | This method is called whenever the KCHorizontalDial will value changed. |
+|`horizontalDialDidValueChanged(horizontalDial: KCHorizontalDial)` | This method is called whenever the KCHorizontalDial did value changed. |
 
 ## TODO
 * Code refactoring
