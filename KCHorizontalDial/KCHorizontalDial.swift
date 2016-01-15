@@ -1,6 +1,6 @@
 //
-//  KCJogDial.swift
-//  KCJogDial
+//  KCHorizontalDial.swift
+//  KCHorizontalDial
 //
 //  Created by LeeSunhyoup on 2015. 9. 25..
 //  Copyright © 2015년 LeeSunhyoup. All rights reserved.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-public enum KCJogDialMagneticOptions {
+public enum KCHorizontalDialMagneticOptions {
     case Floor
     case Round
     case Ceil
     case None
 }
 
-public enum KCJogDialAnimateOptions {
+public enum KCHorizontalDialAnimateOptions {
     case EaseInQuad
     case EaseOutQuad
     case EaseOutBounce
@@ -23,15 +23,15 @@ public enum KCJogDialAnimateOptions {
     case EaseOutElastic
 }
 
-@objc public protocol KCJogDialDelegate {
-    optional func jogDialWillBeginScroll(jogDial: KCJogDial)
-    optional func jogDialDidEndScroll(jogDial: KCJogDial)
-    optional func jogDialWillValueChanged(jogDial: KCJogDial)
-    optional func jogDialDidValueChanged(jogDial: KCJogDial)
+@objc public protocol KCHorizontalDialDelegate {
+    optional func horizontalDialWillBeginScroll(horizontalDial: KCHorizontalDial)
+    optional func horizontalDialDidEndScroll(horizontalDial: KCHorizontalDial)
+    optional func horizontalDialWillValueChanged(horizontalDial: KCHorizontalDial)
+    optional func horizontalDialDidValueChanged(horizontalDial: KCHorizontalDial)
 }
 
 @IBDesignable
-public final class KCJogDial: UIControl {
+public final class KCHorizontalDial: UIControl {
     @IBInspectable public var enableRange: Bool = false {
         didSet {
             if enableRange == true && value < minimumValue {
@@ -47,7 +47,7 @@ public final class KCJogDial: UIControl {
         didSet {
             slidePosition = -value * (Double(frame.width) / Double(markCount)) / tick + Double(frame.width/2)
             setNeedsDisplay()
-            delegate?.jogDialDidValueChanged?(self)
+            delegate?.horizontalDialDidValueChanged?(self)
         }
     }
     @IBInspectable public var tick: Double = 1.0 {
@@ -80,8 +80,8 @@ public final class KCJogDial: UIControl {
     public var lock: Bool = false
     @IBOutlet public weak var delegate: AnyObject?
     
-    public var migneticOption: KCJogDialMagneticOptions = .Round
-    public var animateOption: KCJogDialAnimateOptions = .EaseOutBack
+    public var migneticOption: KCHorizontalDialMagneticOptions = .Round
+    public var animateOption: KCHorizontalDialAnimateOptions = .EaseOutBack
     private(set) var animated: Bool = false
     
     private var previousValue: Double = 0.0
@@ -162,7 +162,7 @@ public final class KCJogDial: UIControl {
         
         animated = false
         
-        delegate?.jogDialWillBeginScroll?(self)
+        delegate?.horizontalDialWillBeginScroll?(self)
         
         return true
     }
@@ -201,7 +201,7 @@ public final class KCJogDial: UIControl {
             }
         }
         
-        delegate?.jogDialDidEndScroll?(self)
+        delegate?.horizontalDialDidEndScroll?(self)
     }
     
     public func animateWithValueUpdate(nextValue: Double, duration: Double = 1.0) {
@@ -235,7 +235,7 @@ public final class KCJogDial: UIControl {
             value = easeOutElastic(time: time, startValue: previousValue, endValue: nextValue, duration: 1.0)
         }
         
-        delegate?.jogDialDidValueChanged?(self)
+        delegate?.horizontalDialDidValueChanged?(self)
         
         if time >= 1.0 {
             stopAnimation()
@@ -249,7 +249,7 @@ public final class KCJogDial: UIControl {
     }
 }
 
-extension KCJogDial {
+extension KCHorizontalDial {
     private func easeInQuad(time t: Double, startValue b: Double, endValue e: Double, duration d: Double) -> Double {
         let c = e - b
         return c*(t/d)*(t/d) + b

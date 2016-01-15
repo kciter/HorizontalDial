@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  KCJogDial
+//  KCHorizontalDial
 //
 //  Created by LeeSunhyoup on 2015. 9. 25..
 //  Copyright © 2015년 LeeSunhyoup. All rights reserved.

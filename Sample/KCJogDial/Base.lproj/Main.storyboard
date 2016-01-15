@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="KCJogDial" id="BYZ-38-t0r" customClass="ViewController" customModule="KCJogDial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="KCHorizontalDial" id="BYZ-38-t0r" customClass="ViewController" customModule="KCHorizontalDial" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -47,7 +47,7 @@
                                     <constraint firstItem="6rm-Lu-y4T" firstAttribute="top" secondItem="KUw-a8-1fC" secondAttribute="top" constant="10" id="xg1-Uc-FzX"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLw-W0-A8w" customClass="KCJogDial" customModule="KCJogDial" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLw-W0-A8w" customClass="KCHorizontalDial" customModule="KCHorizontalDial" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="375" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.23484848484848486" green="0.23484848484848486" blue="0.23484848484848486" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -94,14 +94,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ywz-6m-Lbf"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pFY-DY-kcc"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbT-1h-Uh0">
                                 <rect key="frame" x="0.0" y="435" width="375" height="232"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 Degrees" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6p2-P0-SQG">
-                                        <rect key="frame" x="10" y="10" width="100.5" height="21.5"/>
+                                        <rect key="frame" x="10" y="10" width="101" height="22"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                         <color key="textColor" red="0.42476293430000001" green="0.66866152099999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -150,7 +150,7 @@
                                                         </connections>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eanble Range" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cjo-e3-6L1">
-                                                        <rect key="frame" x="16" y="11" width="93.5" height="17"/>
+                                                        <rect key="frame" x="16" y="11" width="94" height="17"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                         <color key="textColor" red="0.6496143794" green="0.80883412379999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -175,7 +175,7 @@
                                                         </connections>
                                                     </stepper>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tick" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1o-8k-967">
-                                                        <rect key="frame" x="48" y="11.5" width="29.5" height="17"/>
+                                                        <rect key="frame" x="48" y="12" width="30" height="17"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                         <color key="textColor" red="0.6496143794" green="0.80883412379999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -193,7 +193,7 @@
                                                 <rect key="frame" x="250" y="0.0" width="125" height="100"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vertical Align" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAR-4t-GG6">
-                                                        <rect key="frame" x="16" y="11" width="92.5" height="17"/>
+                                                        <rect key="frame" x="16" y="11" width="93" height="17"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                         <color key="textColor" red="0.6496143794" green="0.80883412379999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -240,7 +240,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcB-LE-Hxu">
-                                        <rect key="frame" x="252" y="10" width="112.5" height="33.5"/>
+                                        <rect key="frame" x="252" y="10" width="113" height="34"/>
                                         <string key="text">Min: -80 Degress
 Max: 80 Degrees</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -287,8 +287,8 @@ Max: 80 Degrees</string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="degreesValueLabel" destination="6p2-P0-SQG" id="A0b-fE-ipL"/>
+                        <outlet property="horizontalDial" destination="TLw-W0-A8w" id="b0B-KN-5zB"/>
                         <outlet property="imageView" destination="Rjw-in-POG" id="ePy-mX-IFl"/>
-                        <outlet property="jogDial" destination="TLw-W0-A8w" id="oxz-pw-4eQ"/>
                         <outlet property="tickLabel" destination="u1o-8k-967" id="qgQ-5k-Ph0"/>
                     </connections>
                 </viewController>
