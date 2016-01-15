@@ -3,6 +3,7 @@
 [![Version](https://img.shields.io/cocoapods/v/KCJogDial.svg?style=flat)](http://cocoapods.org/pods/kcjogdial)
 [![License](https://img.shields.io/cocoapods/l/KCJogDial.svg?style=flat)](http://cocoapods.org/pods/kcjogdial)
 [![Platform](https://img.shields.io/cocoapods/p/KCJogDial.svg?style=flat)](http://cocoapods.org/pods/kcjogdial)
+[![Build Status](https://travis-ci.org/kciter/KCJogDial.svg)](https://travis-ci.org/kciter/KCJogDial)
 
 ## Preview
 <img src="https://github.com/kciter/KCJogDial/raw/master/Images/preview.gif" alt="Preview gif">
