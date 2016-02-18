@@ -17,7 +17,7 @@
 
 ## Installation
 
-### Cocoapods
+### CocoaPods
 ```ruby
 use_frameworks!
 pod "KCHorizontalDial"
