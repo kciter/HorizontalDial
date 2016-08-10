@@ -18,11 +18,11 @@ class ViewController: UIViewController, UITextFieldDelegate, KCHorizontalDialDel
         super.viewDidLoad()
     }
     
-    func horizontalDialDidValueChanged(horizontalDial: KCHorizontalDial) {
+    func horizontalDialDidValueChanged(_ horizontalDial: KCHorizontalDial) {
         let degrees = horizontalDial.value
         let radians = degreesToRadians(degrees)
         degreesValueLabel?.text = "\(round(degrees*100)/100) Degrees"
-        imageView?.transform = CGAffineTransformMakeRotation(CGFloat(radians))
+        imageView?.transform = CGAffineTransform(rotationAngle: CGFloat(radians))
     }
     
     @IBAction func reset() {
@@ -39,16 +39,16 @@ class ViewController: UIViewController, UITextFieldDelegate, KCHorizontalDialDel
         horizontalDial?.animateWithValueUpdate(minimumValue, duration: 2)
     }
     
-    @IBAction func enableRangeValueChanged(_switch: UISwitch) {
-        horizontalDial?.enableRange = _switch.on
+    @IBAction func enableRangeValueChanged(_ _switch: UISwitch) {
+        horizontalDial?.enableRange = _switch.isOn
     }
     
-    @IBAction func tickValueChanged(stepper: UIStepper) {
+    @IBAction func tickValueChanged(_ stepper: UIStepper) {
         tickLabel?.text = "Tick \(stepper.value)"
         horizontalDial?.tick = stepper.value
     }
     
-    @IBAction func verticalAlignValueChanged(segmentControl: UISegmentedControl) {
+    @IBAction func verticalAlignValueChanged(_ segmentControl: UISegmentedControl) {
         switch segmentControl.selectedSegmentIndex {
         case 0:
             horizontalDial?.verticalAlign = "top"
@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate, KCHorizontalDialDel
     }
     
     /// private function ///
-    private func degreesToRadians(degrees: Double) -> Double {
+    private func degreesToRadians(_ degrees: Double) -> Double {
         return degrees*M_PI/180.0
     }
 }

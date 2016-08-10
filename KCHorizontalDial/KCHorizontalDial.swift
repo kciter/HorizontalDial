@@ -9,25 +9,25 @@
 import UIKit
 
 public enum KCHorizontalDialMagneticOptions {
-    case Floor
-    case Round
-    case Ceil
-    case None
+    case floor
+    case round
+    case ceil
+    case none
 }
 
 public enum KCHorizontalDialAnimateOptions {
-    case EaseInQuad
-    case EaseOutQuad
-    case EaseOutBounce
-    case EaseOutBack
-    case EaseOutElastic
+    case easeInQuad
+    case easeOutQuad
+    case easeOutBounce
+    case easeOutBack
+    case easeOutElastic
 }
 
 @objc public protocol KCHorizontalDialDelegate {
-    optional func horizontalDialWillBeginScroll(horizontalDial: KCHorizontalDial)
-    optional func horizontalDialDidEndScroll(horizontalDial: KCHorizontalDial)
-    optional func horizontalDialWillValueChanged(horizontalDial: KCHorizontalDial)
-    optional func horizontalDialDidValueChanged(horizontalDial: KCHorizontalDial)
+    @objc optional func horizontalDialWillBeginScroll(_ horizontalDial: KCHorizontalDial)
+    @objc optional func horizontalDialDidEndScroll(_ horizontalDial: KCHorizontalDial)
+    @objc optional func horizontalDialWillValueChanged(_ horizontalDial: KCHorizontalDial)
+    @objc optional func horizontalDialDidValueChanged(_ horizontalDial: KCHorizontalDial)
 }
 
 @IBDesignable
@@ -56,12 +56,12 @@ public final class KCHorizontalDial: UIControl {
         }
     }
     
-    @IBInspectable public var centerMarkColor: UIColor = UIColor.yellowColor()
+    @IBInspectable public var centerMarkColor: UIColor = UIColor.yellow
     @IBInspectable public var centerMarkWidth: CGFloat = 3.0
     @IBInspectable public var centerMarkHeightRatio: CGFloat = 0.5
     @IBInspectable public var centerMarkRadius: CGFloat = 5.0
     
-    @IBInspectable public var markColor: UIColor = UIColor.whiteColor()
+    @IBInspectable public var markColor: UIColor = UIColor.white
     @IBInspectable public var markWidth: CGFloat = 1.0
     @IBInspectable public var markRadius: CGFloat = 1.0
     @IBInspectable public var markCount: Int = 20
@@ -80,16 +80,16 @@ public final class KCHorizontalDial: UIControl {
     public var lock: Bool = false
     @IBOutlet public weak var delegate: AnyObject?
     
-    public var migneticOption: KCHorizontalDialMagneticOptions = .Round
-    public var animateOption: KCHorizontalDialAnimateOptions = .EaseOutBack
+    public var migneticOption: KCHorizontalDialMagneticOptions = .round
+    public var animateOption: KCHorizontalDialAnimateOptions = .easeOutBack
     private(set) var animated: Bool = false
     
     private var previousValue: Double = 0.0
     private var previousLocation = CGPoint()
     private var nextValue: Double = 0.0
     private var slidePosition: Double = 0.0
-    private var lastTime: NSTimeInterval = CACurrentMediaTime()
-    private var timer: NSTimer?
+    private var lastTime: TimeInterval = CACurrentMediaTime()
+    private var timer: Timer?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -99,29 +99,29 @@ public final class KCHorizontalDial: UIControl {
         super.init(coder: coder)
     }
     
-    override public func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    override public func draw(_ rect: CGRect) {
+        super.draw(rect)
         
         guard let ctx = UIGraphicsGetCurrentContext() else { return }
         for index in 0...markCount {
-            var relativePosition = (CGFloat((frame.width) / CGFloat(markCount)) * CGFloat(index) + CGFloat(slidePosition) - frame.width/2) % frame.width
+            var relativePosition = (CGFloat((frame.width) / CGFloat(markCount)) * CGFloat(index) + CGFloat(slidePosition) - frame.width/2).truncatingRemainder(dividingBy: frame.width)
             if relativePosition < 0 {
                 relativePosition += frame.width
             }
             
             let screenWidth = self.bounds.width / 2.0
             let alpha = 1.0 - (abs(relativePosition-screenWidth) / screenWidth)
-            CGContextSetFillColorWithColor(ctx, self.markColor.colorWithAlphaComponent(alpha).CGColor)
+            ctx.setFillColor(self.markColor.withAlphaComponent(alpha).cgColor)
             
             let x = relativePosition - markWidth/2
             let width = markWidth
             var y: CGFloat = 0
             var height: CGFloat = 0
             
-            if verticalAlign.containsString("top") {
+            if verticalAlign.contains("top") {
                 y = 0
                 height = frame.height - CGFloat(padding*2)
-            } else if verticalAlign.containsString("bottom") {
+            } else if verticalAlign.contains("bottom") {
                 y += CGFloat(padding*2)
                 height = frame.height - y
             } else {
@@ -131,34 +131,34 @@ public final class KCHorizontalDial: UIControl {
             let rect = CGRect(x: x, y: y, width: width, height: height)
             
             let path = UIBezierPath(roundedRect: rect, cornerRadius: markRadius)
-            CGContextAddPath(ctx, path.CGPath)
-            CGContextFillPath(ctx)
+            ctx.addPath(path.cgPath)
+            ctx.fillPath()
         }
         
         var centerMarkPositionY: CGFloat = 0
         let centerMarkHeight: CGFloat = frame.height*centerMarkHeightRatio
-        if verticalAlign.containsString("top") {
+        if verticalAlign.contains("top") {
             centerMarkPositionY = 0
-        } else if verticalAlign.containsString("bottom") {
+        } else if verticalAlign.contains("bottom") {
             centerMarkPositionY = frame.height - centerMarkHeight
         } else {
             centerMarkPositionY = frame.height/2-centerMarkHeight/2
         }
         let path = UIBezierPath(roundedRect:
-            CGRectMake(frame.width/2 - centerMarkWidth/2, centerMarkPositionY, centerMarkWidth, centerMarkHeight), cornerRadius: centerMarkRadius)
-        CGContextAddPath(ctx, path.CGPath)
+            CGRect(x: frame.width/2 - centerMarkWidth/2, y: centerMarkPositionY, width: centerMarkWidth, height: centerMarkHeight), cornerRadius: centerMarkRadius)
+        ctx.addPath(path.cgPath)
         
-        CGContextSetFillColorWithColor(ctx, centerMarkColor.CGColor)
-        CGContextAddPath(ctx, path.CGPath)
-        CGContextFillPath(ctx)
+        ctx.setFillColor(centerMarkColor.cgColor)
+        ctx.addPath(path.cgPath)
+        ctx.fillPath()
     }
     
-    override public func beginTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
+    override public func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         guard tick != 0 && lock != true else { return false }
         
         stopAnimation()
         
-        previousLocation = touch.locationInView(self)
+        previousLocation = touch.location(in: self)
         
         animated = false
         
@@ -167,10 +167,10 @@ public final class KCHorizontalDial: UIControl {
         return true
     }
     
-    override public func continueTrackingWithTouch(touch: UITouch, withEvent event: UIEvent?) -> Bool {
+    override public func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         guard tick != 0 && lock != true else { return false }
         
-        let location = touch.locationInView(self)
+        let location = touch.location(in: self)
         let deltaLocation = Double(location.x - previousLocation.x)
         let deltaValue = deltaLocation / (Double(frame.width) / Double(markCount)) * tick
         
@@ -181,7 +181,7 @@ public final class KCHorizontalDial: UIControl {
         return true
     }
     
-    override public func endTrackingWithTouch(touch: UITouch?, withEvent event: UIEvent?) {
+    override public func endTracking(_ touch: UITouch?, with event: UIEvent?) {
         guard tick != 0 && lock != true else { return }
         
         if enableRange == true && value < minimumValue {
@@ -190,13 +190,13 @@ public final class KCHorizontalDial: UIControl {
             animateWithValueUpdate(maximumValue)
         } else {
             switch migneticOption {
-            case .Ceil:
+            case .ceil:
                 animateWithValueUpdate(ceil(value * (10.0/tick) / 10.0) * (10.0 / (10.0/tick)))
-            case .Floor:
+            case .floor:
                 animateWithValueUpdate(floor(value * (10.0/tick) / 10.0) * (10.0 / (10.0/tick)))
-            case .Round:
+            case .round:
                 animateWithValueUpdate(round(value * (10.0/tick) / 10.0) * (10.0 / (10.0/tick)))
-            case .None:
+            case .none:
                 break
             }
         }
@@ -204,7 +204,7 @@ public final class KCHorizontalDial: UIControl {
         delegate?.horizontalDialDidEndScroll?(self)
     }
     
-    public func animateWithValueUpdate(nextValue: Double, duration: Double = 1.0) {
+    public func animateWithValueUpdate(_ nextValue: Double, duration: Double = 1.0) {
         previousValue = value
         self.nextValue = nextValue
         if nextValue == previousValue { return }
@@ -212,26 +212,26 @@ public final class KCHorizontalDial: UIControl {
         stopAnimation()
         animated = true
         lastTime = CACurrentMediaTime()
-        timer = NSTimer(timeInterval:1.0/60.0, target: self, selector: "step", userInfo: nil, repeats: true)
-        NSRunLoop.mainRunLoop().addTimer(timer!, forMode: NSDefaultRunLoopMode)
+        timer = Timer(timeInterval:1.0/60.0, target: self, selector: #selector(KCHorizontalDial.step), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: RunLoopMode.defaultRunLoopMode)
     }
     
     func step() {
-        let currentTime: NSTimeInterval = CACurrentMediaTime()
+        let currentTime: TimeInterval = CACurrentMediaTime()
         let elapsedTime = currentTime - self.lastTime;
         
-        let time: NSTimeInterval = min(1.0, elapsedTime);
+        let time: TimeInterval = min(1.0, elapsedTime);
         
         switch animateOption {
-        case .EaseInQuad:
+        case .easeInQuad:
             value = easeInQuad(time: time, startValue: previousValue, endValue: nextValue, duration: 1.0)
-        case .EaseOutQuad:
+        case .easeOutQuad:
             value = easeOutQuad(time: time, startValue: previousValue, endValue: nextValue, duration: 1.0)
-        case .EaseOutBounce:
+        case .easeOutBounce:
             value = easeOutBounce(time: time, startValue: previousValue, endValue: nextValue, duration: 1.0)
-        case .EaseOutBack:
+        case .easeOutBack:
             value = easeOutBack(time: time, startValue: previousValue, endValue: nextValue, duration: 1.0)
-        case .EaseOutElastic:
+        case .easeOutElastic:
             value = easeOutElastic(time: time, startValue: previousValue, endValue: nextValue, duration: 1.0)
         }
         
