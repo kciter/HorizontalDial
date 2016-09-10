@@ -1,5 +1,5 @@
 # KCHorizontalDial
-![Swift 2.0](https://img.shields.io/badge/Swift-2.0-orange.svg)
+![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 [![Version](https://img.shields.io/cocoapods/v/KCHorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
 [![License](https://img.shields.io/cocoapods/l/KCHorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
 [![Platform](https://img.shields.io/cocoapods/p/KCHorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
@@ -9,8 +9,8 @@
 
 ## Requirements
 * iOS 8.0+
-* Swift 2
-* Xcode 7.0
+* Swift 3
+* Xcode 8.0
 
 ## Storyboard support
 <img src="https://github.com/kciter/KCHorizontalDial/raw/master/Images/storyboard.png" width="50%" alt="Storyboard Screenshot">
