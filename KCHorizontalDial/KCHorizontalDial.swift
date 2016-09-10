@@ -82,14 +82,14 @@ public final class KCHorizontalDial: UIControl {
     
     public var migneticOption: KCHorizontalDialMagneticOptions = .round
     public var animateOption: KCHorizontalDialAnimateOptions = .easeOutBack
-    private(set) var animated: Bool = false
+    fileprivate(set) var animated: Bool = false
     
-    private var previousValue: Double = 0.0
-    private var previousLocation = CGPoint()
-    private var nextValue: Double = 0.0
-    private var slidePosition: Double = 0.0
-    private var lastTime: TimeInterval = CACurrentMediaTime()
-    private var timer: Timer?
+    fileprivate var previousValue: Double = 0.0
+    fileprivate var previousLocation = CGPoint()
+    fileprivate var nextValue: Double = 0.0
+    fileprivate var slidePosition: Double = 0.0
+    fileprivate var lastTime: TimeInterval = CACurrentMediaTime()
+    fileprivate var timer: Timer?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -242,7 +242,7 @@ public final class KCHorizontalDial: UIControl {
         }
     }
     
-    private func stopAnimation() {
+    fileprivate func stopAnimation() {
         animated = false
         timer?.invalidate()
         timer = nil
@@ -250,17 +250,17 @@ public final class KCHorizontalDial: UIControl {
 }
 
 extension KCHorizontalDial {
-    private func easeInQuad(time t: Double, startValue b: Double, endValue e: Double, duration d: Double) -> Double {
+    fileprivate func easeInQuad(time t: Double, startValue b: Double, endValue e: Double, duration d: Double) -> Double {
         let c = e - b
         return c*(t/d)*(t/d) + b
     }
     
-    private func easeOutQuad(time t: Double, startValue b: Double, endValue e: Double, duration d: Double) -> Double {
+    fileprivate func easeOutQuad(time t: Double, startValue b: Double, endValue e: Double, duration d: Double) -> Double {
         let c = e - b
         return -c*(t/d)*(t/d-2) + b
     }
     
-    private func easeOutBounce(time t: Double, startValue b: Double, endValue e: Double, duration d: Double) -> Double {
+    fileprivate func easeOutBounce(time t: Double, startValue b: Double, endValue e: Double, duration d: Double) -> Double {
         let c = e - b
         if ((t/d) < (1/2.75)) {
             return c*(7.5625*t/d*t/d) + b
@@ -273,7 +273,7 @@ extension KCHorizontalDial {
         }
     }
     
-    private func easeOutElastic(time t: Double, startValue b: Double, endValue e: Double, duration d: Double) -> Double {
+    fileprivate func easeOutElastic(time t: Double, startValue b: Double, endValue e: Double, duration d: Double) -> Double {
         let c = e - b
         let π = M_PI
         var s = 1.70158, p = 0.0, a = c
@@ -288,7 +288,7 @@ extension KCHorizontalDial {
         return a*pow(2.0,-10.0*(t/d)) * sin((t-s)*(2.0*π)/p) + c + b
     }
     
-    private func easeOutBack(time t: Double, startValue b: Double, endValue e: Double, duration d: Double) -> Double {
+    fileprivate func easeOutBack(time t: Double, startValue b: Double, endValue e: Double, duration d: Double) -> Double {
         let c = e - b
         let s = 2.70158
         let t = t/d-1

@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate, KCHorizontalDialDel
     }
     
     /// private function ///
-    private func degreesToRadians(_ degrees: Double) -> Double {
+    fileprivate func degreesToRadians(_ degrees: Double) -> Double {
         return degrees*M_PI/180.0
     }
 }
