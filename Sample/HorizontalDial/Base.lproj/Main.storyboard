@@ -13,7 +13,7 @@
         <!--Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="KCHorizontalDial" id="BYZ-38-t0r" customClass="ViewController" customModule="KCHorizontalDial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="HorizontalDial" id="BYZ-38-t0r" customClass="ViewController" customModule="HorizontalDial" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -51,7 +51,7 @@
                                     <constraint firstItem="6rm-Lu-y4T" firstAttribute="top" secondItem="KUw-a8-1fC" secondAttribute="top" constant="10" id="xg1-Uc-FzX"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLw-W0-A8w" customClass="HorizontalDial" customModule="KCHorizontalDial" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLw-W0-A8w" customClass="KCHorizontalDial" customModule="HorizontalDial" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="375" width="375" height="60"/>
                                 <color key="backgroundColor" red="0.23484848484848486" green="0.23484848484848486" blue="0.23484848484848486" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -98,7 +98,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="KMr-Ir-zEC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="pFY-DY-kcc"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kbT-1h-Uh0">
@@ -289,7 +289,7 @@ Max: 80 Degrees</string>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="degreesValueLabel" destination="6p2-P0-SQG" id="A0b-fE-ipL"/>
-                        <outlet property="horizontalDial" destination="TLw-W0-A8w" id="WXg-Ia-Wnw"/>
+                        <outlet property="horizontalDial" destination="TLw-W0-A8w" id="b0B-KN-5zB"/>
                         <outlet property="imageView" destination="Rjw-in-POG" id="ePy-mX-IFl"/>
                         <outlet property="tickLabel" destination="u1o-8k-967" id="qgQ-5k-Ph0"/>
                     </connections>

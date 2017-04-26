@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B68275AB1C493735008C54FF /* KCHorizontalDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68275AA1C493735008C54FF /* KCHorizontalDial.swift */; };
+		B671D9271EB1159E005EE7E1 /* HorizontalDial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B671D9261EB1159E005EE7E1 /* HorizontalDial.swift */; };
 		B692BEC31BB5934400A8B098 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692BEC21BB5934400A8B098 /* AppDelegate.swift */; };
 		B692BEC51BB5934400A8B098 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B692BEC41BB5934400A8B098 /* ViewController.swift */; };
 		B692BEC81BB5934400A8B098 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B692BEC61BB5934400A8B098 /* Main.storyboard */; };
@@ -27,7 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B68275AA1C493735008C54FF /* KCHorizontalDial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KCHorizontalDial.swift; path = ../../KCHorizontalDial/KCHorizontalDial.swift; sourceTree = "<group>"; };
+		B671D9261EB1159E005EE7E1 /* HorizontalDial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HorizontalDial.swift; path = ../HorizontalDial.swift; sourceTree = "<group>"; };
 		B692BEBF1BB5934400A8B098 /* KCHorizontalDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KCHorizontalDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B692BEC21BB5934400A8B098 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B692BEC41BB5934400A8B098 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		B692BEB61BB5934400A8B098 = {
 			isa = PBXGroup;
 			children = (
-				B692BEC11BB5934400A8B098 /* KCHorizontalDial */,
+				B692BEC11BB5934400A8B098 /* HorizontalDial */,
 				B692BEC01BB5934400A8B098 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,7 +74,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B692BEC11BB5934400A8B098 /* KCHorizontalDial */ = {
+		B692BEC11BB5934400A8B098 /* HorizontalDial */ = {
 			isa = PBXGroup;
 			children = (
 				B692BEE41BB5965900A8B098 /* lena_std.tif */,
@@ -84,9 +84,9 @@
 				B692BEC91BB5934400A8B098 /* Assets.xcassets */,
 				B692BECB1BB5934400A8B098 /* LaunchScreen.storyboard */,
 				B692BECE1BB5934400A8B098 /* Info.plist */,
-				B68275AA1C493735008C54FF /* KCHorizontalDial.swift */,
+				B671D9261EB1159E005EE7E1 /* HorizontalDial.swift */,
 			);
-			name = KCHorizontalDial;
+			name = HorizontalDial;
 			path = KCJogDial;
 			sourceTree = "<group>";
 		};
@@ -147,7 +147,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B692BEBA1BB5934400A8B098 /* Build configuration list for PBXProject "KCHorizontalDial" */;
+			buildConfigurationList = B692BEBA1BB5934400A8B098 /* Build configuration list for PBXProject "HorizontalDial" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -193,8 +193,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B692BEC51BB5934400A8B098 /* ViewController.swift in Sources */,
-				B68275AB1C493735008C54FF /* KCHorizontalDial.swift in Sources */,
 				B692BEC31BB5934400A8B098 /* AppDelegate.swift in Sources */,
+				B671D9271EB1159E005EE7E1 /* HorizontalDial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +372,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B692BEBA1BB5934400A8B098 /* Build configuration list for PBXProject "KCHorizontalDial" */ = {
+		B692BEBA1BB5934400A8B098 /* Build configuration list for PBXProject "HorizontalDial" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B692BEDA1BB5934400A8B098 /* Debug */,
