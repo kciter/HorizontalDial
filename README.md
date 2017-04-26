@@ -1,11 +1,11 @@
-# KCHorizontalDial
+# HorizontalDial
 ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
-[![Version](https://img.shields.io/cocoapods/v/KCHorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
-[![License](https://img.shields.io/cocoapods/l/KCHorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
-[![Platform](https://img.shields.io/cocoapods/p/KCHorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
+[![Version](https://img.shields.io/cocoapods/v/HorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
+[![License](https://img.shields.io/cocoapods/l/HorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
+[![Platform](https://img.shields.io/cocoapods/p/HorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
 
 ## Preview
-<img src="https://github.com/kciter/KCHorizontalDial/raw/master/Images/preview.gif" alt="Preview gif">
+<img src="https://github.com/kciter/HorizontalDial/raw/master/Images/preview.gif" alt="Preview gif">
 
 ## Requirements
 * iOS 8.0+
@@ -13,17 +13,17 @@
 * Xcode 8.0
 
 ## Storyboard support
-<img src="https://github.com/kciter/KCHorizontalDial/raw/master/Images/storyboard.png" width="50%" alt="Storyboard Screenshot">
+<img src="https://github.com/kciter/HorizontalDial/raw/master/Images/storyboard.png" width="50%" alt="Storyboard Screenshot">
 
 ## Installation
 
 ### CocoaPods
 ```ruby
 use_frameworks!
-pod "KCHorizontalDial"
+pod "HorizontalDial"
 ```
 ### Manually
-To install manually the KCHorizontalDial in an app, just drag the `KCHorizontalDial.swift` file into your project.
+To install manually the HorizontalDial in an app, just drag the `HorizontalDial.swift` file into your project.
 
 ## Properties
 | Property | Type | Description |
@@ -48,10 +48,10 @@ To install manually the KCHorizontalDial in an app, just drag the `KCHorizontalD
 ## Protocols
 | Protocol | Description |
 |---|---|---|
-|`horizontalDialWillBeginScroll(horizontalDial: KCHorizontalDial)` | This method is called whenever the KCHorizontalDial will begin an animated scroll. |
-|`horizontalDialDidEndScroll(horizontalDial: KCHorizontalDial)` | This method is called whenever the KCHorizontalDial will ends an animated scroll. |
-|`horizontalDialWillValueChanged(horizontalDial: KCHorizontalDial)` | This method is called whenever the KCHorizontalDial will value changed. |
-|`horizontalDialDidValueChanged(horizontalDial: KCHorizontalDial)` | This method is called whenever the KCHorizontalDial did value changed. |
+|`horizontalDialWillBeginScroll(horizontalDial: HorizontalDial)` | This method is called whenever the HorizontalDial will begin an animated scroll. |
+|`horizontalDialDidEndScroll(horizontalDial: HorizontalDial)` | This method is called whenever the HorizontalDial will ends an animated scroll. |
+|`horizontalDialWillValueChanged(horizontalDial: HorizontalDial)` | This method is called whenever the HorizontalDial will value changed. |
+|`horizontalDialDidValueChanged(horizontalDial: HorizontalDial)` | This method is called whenever the HorizontalDial did value changed. |
 
 ## TODO
 * Code refactoring
