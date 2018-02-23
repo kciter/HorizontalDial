@@ -54,7 +54,7 @@ To install manually the HorizontalDial in an app, just drag the `HorizontalDial.
 
 ## Protocols
 | Protocol | Description |
-|---|---|---|
+|---|---|
 |`horizontalDialWillBeginScroll(horizontalDial: HorizontalDial)` | This method is called whenever the HorizontalDial will begin an animated scroll. |
 |`horizontalDialDidEndScroll(horizontalDial: HorizontalDial)` | This method is called whenever the HorizontalDial will ends an animated scroll. |
 |`horizontalDialWillValueChanged(horizontalDial: HorizontalDial)` | This method is called whenever the HorizontalDial will value changed. |
