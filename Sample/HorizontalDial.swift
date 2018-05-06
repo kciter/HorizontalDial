@@ -216,7 +216,7 @@ public final class HorizontalDial: UIControl {
         RunLoop.main.add(timer!, forMode: RunLoopMode.defaultRunLoopMode)
     }
     
-    func step() {
+    @objc func step() {
         let currentTime: TimeInterval = CACurrentMediaTime()
         let elapsedTime = currentTime - self.lastTime;
         
