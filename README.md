@@ -1,5 +1,5 @@
 # HorizontalDial
-![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
+![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg)
 [![Version](https://img.shields.io/cocoapods/v/HorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
 [![License](https://img.shields.io/cocoapods/l/HorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
 [![Platform](https://img.shields.io/cocoapods/p/HorizontalDial.svg?style=flat)](http://cocoapods.org/pods/kchorizontaldial)
@@ -9,8 +9,7 @@
 
 ## Requirements
 * iOS 8.0+
-* Swift 3
-* Xcode 8.0
+* Swift 5
 
 ## Storyboard support
 <img src="https://github.com/kciter/HorizontalDial/raw/master/Images/storyboard.png" width="50%" alt="Storyboard Screenshot">
@@ -62,7 +61,7 @@ To install manually the HorizontalDial in an app, just drag the `HorizontalDial.
 ## Donate
 If you like this open source, you can sponsor it. :smile:
 
-[Paypal me](paypal.me/kciter)
+[Paypal me](https://paypal.me/kciter)
 
 ## License
 The MIT License (MIT)

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "HorizontalDial"
-  s.version      = "3.1"
+  s.version      = "4.0"
   s.summary      = "A horizontal scroll dial like Instagram"
   s.homepage     = "https://github.com/kciter/KCHorizontalDial"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
